@@ -62,7 +62,7 @@ public class GravityFreeAgent : MonoBehaviour
 
         foreach (var point in rayPoints)
         {
-            if (Physics.Raycast(point.position, -transform.up, out hit, float.PositiveInfinity))
+            if (Physics.Raycast(point.position, -transform.up, out hit, 0.5f))
             {
                 normal += hit.normal;
             }
@@ -71,22 +71,22 @@ public class GravityFreeAgent : MonoBehaviour
                 normal += transform.up;
             }
         }
+    }
 
+    private void FixedUpdate()
+    {
         //傾きを求める
         Quaternion q = Quaternion.FromToRotation(transform.up, normal.normalized);
 
         //自身を回転させる
         transform.rotation *= q;
-    }
 
-    private void FixedUpdate()
-    {
         transform.position = transform.position + (transform.right * moveSpeed * Time.fixedDeltaTime);
 
         RaycastHit hit;
-        if (Physics.Raycast(bottom.position, -transform.up, out hit, 1))
+        if (Physics.Raycast(bottom.position, -transform.up, out hit, 3))
         {
-            if (hit.distance > 0.1f)
+            if (hit.distance > 0.05f)
             {
                 transform.position = transform.position + (-transform.up * Physics.gravity.magnitude * Time.fixedDeltaTime);
             }
@@ -107,6 +107,8 @@ public class GravityFreeAgent : MonoBehaviour
         //    transform.position = transform.position + (Vector3.down * Physics.gravity.magnitude * Time.fixedDeltaTime);
         //}
     }
+
+    [SerializeField]
     Vector3 normal;
     private void OnDrawGizmos()
     {

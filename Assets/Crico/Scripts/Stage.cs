@@ -1,5 +1,6 @@
 using Crico.AI;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 namespace Crico
@@ -8,6 +9,15 @@ namespace Crico
     {
         [SerializeField] UnityEvent startEvent = new UnityEvent();
         [SerializeField] UnityEvent winEvent = new UnityEvent();
+
+        [SerializeField]
+        DestructibleTerrain destructibleTerrain = null;
+
+        [SerializeField]
+        RuntimeCircleClipper runtimeCircleClipper = null;
+
+        [SerializeField]
+        AgentStatus player = null;
 
         Trigger mainCameraStartStopTrigger = null;
         TargetHolder mainCameraTargetHolder = null;
@@ -19,6 +29,7 @@ namespace Crico
 
         private void AssertInspectorVars()
         {
+            Assert.IsNotNull(player);
         }
 
         private void Awake()
@@ -30,6 +41,8 @@ namespace Crico
         {
             this.mainCameraStartStopTrigger = mainCameraStartStopTrigger;
             this.mainCameraTargetHolder = cameraTargetHolder;
+
+            runtimeCircleClipper.Init(camera);
         }
 
         private bool CheckStageWon()

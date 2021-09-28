@@ -121,16 +121,28 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
         return vertices;
     }
 
-    void Awake()
+    public void Init(Camera camera)
+    {
+        mainCamera = camera;
+        cameraZPos = mainCamera.transform.position.z;
+        radius = diameter / 2f;
+    }
+
+    public void Init()
     {
         mainCamera = Camera.main;
         cameraZPos = mainCamera.transform.position.z;
         radius = diameter / 2f;
     }
 
+    void Awake()
+    {
+        Init(Camera.main);
+    }
+
     void Start()
     {
-        
+        //Init();
     }
 
     void Update()
