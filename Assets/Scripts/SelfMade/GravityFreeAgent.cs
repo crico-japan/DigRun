@@ -49,26 +49,30 @@ public class GravityFreeAgent : MonoBehaviour
     {
         normal = Vector3.up;
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position = transform.position + (transform.right * moveSpeed * Time.fixedDeltaTime);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position = transform.position + (transform.right * -moveSpeed * Time.fixedDeltaTime);
-        }
+        //if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    transform.position = transform.position + (transform.right * moveSpeed * Time.fixedDeltaTime);
+        //}
+        //else if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    transform.position = transform.position + (transform.right * -moveSpeed * Time.fixedDeltaTime);
+        //}
 
         RaycastHit hit;
 
         foreach (var point in rayPoints)
         {
-            if (Physics.Raycast(point.position, -transform.up, out hit, 0.5f))
+            if (Physics.Raycast(point.position, -transform.up.normalized, out hit, 0.5f))
             {
-                normal += hit.normal;
+                //念のためzの値を消去
+                var normalbuf = hit.normal;
+                normalbuf.z = 0;
+                normal += normalbuf;
             }
             else
             {
-                normal += transform.up;
+                //normal += transform.up.normalized;
+                normal += Vector3.up;
             }
         }
     }
