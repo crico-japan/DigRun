@@ -21,6 +21,7 @@ namespace Crico
 
         Trigger mainCameraStartStopTrigger = null;
         TargetHolder mainCameraTargetHolder = null;
+        TouchSensor touchSensor = null;
 
         bool playing = false;
         bool gameOver = false;
@@ -41,7 +42,7 @@ namespace Crico
         {
             this.mainCameraStartStopTrigger = mainCameraStartStopTrigger;
             this.mainCameraTargetHolder = cameraTargetHolder;
-
+            this.touchSensor = touchSensor;
             runtimeCircleClipper.Init(camera);
         }
 
@@ -91,6 +92,9 @@ namespace Crico
             playing = true;
             startEvent.Invoke();
             mainCameraStartStopTrigger.SetTrigger();
+
+            //
+            mainCameraTargetHolder.SetTarget(player.gameObject);
         }
 
         public void StopPlaying()

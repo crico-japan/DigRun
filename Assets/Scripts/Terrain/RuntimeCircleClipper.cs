@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Crico;
 using Vector2i = ClipperLib.IntPoint;
 using Vector2f = UnityEngine.Vector2;
 
+[RequireComponent(typeof(InputReceiver))]
 public class RuntimeCircleClipper : MonoBehaviour, IClip
 {
     private struct TouchLineOverlapCheck 
@@ -128,16 +129,16 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
         radius = diameter / 2f;
     }
 
-    public void Init()
-    {
-        mainCamera = Camera.main;
-        cameraZPos = mainCamera.transform.position.z;
-        radius = diameter / 2f;
-    }
+    //public void Init()
+    //{
+    //    mainCamera = Camera.main;
+    //    cameraZPos = mainCamera.transform.position.z;
+    //    radius = diameter / 2f;
+    //}
 
     void Awake()
     {
-        Init(Camera.main);
+        //Init(Camera.main);
     }
 
     void Start()

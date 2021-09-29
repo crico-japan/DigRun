@@ -1,8 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
 namespace Crico.AI.States
 {
-    public class StateTransitionOnDragInput : StateTransition
+    public class StateTransitionOnTapInput : StateTransition
     {
         InputReceiver agentInputReceiver;
         bool inputReceived;
@@ -10,24 +11,20 @@ namespace Crico.AI.States
         public override void OnStateEnter(Agent agent)
         {
             base.OnStateEnter(agent);
-
             inputReceived = false;
             agentInputReceiver = agent.GetComponent<InputReceiver>();
-            agentInputReceiver.onDrag.AddListener(OnDrag);
+            agentInputReceiver.onPointerUp.AddListener(OnTap);
         }
 
-        private void OnDrag(Vector2 input)
+        private void OnTap()
         {
-            agentInputReceiver.onDrag.RemoveListener(OnDrag);
             agentInputReceiver = null;
             inputReceived = true;
         }
-
         public override bool CheckTransitionCondition(Agent agent)
         {
             return inputReceived;
         }
-
     }
-
 }
+
