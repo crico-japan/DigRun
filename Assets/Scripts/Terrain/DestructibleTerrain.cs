@@ -4,6 +4,7 @@ using Vector2f = UnityEngine.Vector2;
 using Vector2i = ClipperLib.IntPoint;
 
 using int64 = System.Int64;
+using UnityEngine.UI;
 
 public class DestructibleTerrain : Subject, IObserver
 {
@@ -30,6 +31,9 @@ public class DestructibleTerrain : Subject, IObserver
     private float height;
 
     private DestructibleBlock[] blocks;
+
+    [SerializeField]
+    Text offset = null;
 
     private void Awake()
     {
@@ -77,14 +81,15 @@ public class DestructibleTerrain : Subject, IObserver
 
                 block.UpdateGeometryWithMoreVertices(polygons, width, height, depth);
                 block.AddObserver(this);
-                //block.tag = TagName.Ground;
-                //block.gameObject.layer = LayerName.Ground;
+                block.tag = TagName.Ground;
+                block.gameObject.layer = LayerName.Ground;
             }
         }
     }
 
     public Vector2 GetPositionOffset()
     {
+        offset.text = ("TerrainOffset：") + transform.position.ToString();
         return transform.position;
     }
 

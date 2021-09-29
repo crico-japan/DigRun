@@ -17,6 +17,9 @@ namespace Crico
         RuntimeCircleClipper runtimeCircleClipper = null;
 
         [SerializeField]
+        FragmentGenerator fragmentGenerator = null;
+
+        [SerializeField]
         AgentStatus player = null;
 
         Trigger mainCameraStartStopTrigger = null;
@@ -31,6 +34,8 @@ namespace Crico
         private void AssertInspectorVars()
         {
             Assert.IsNotNull(player);
+            Assert.IsNotNull(runtimeCircleClipper);
+            Assert.IsNotNull(fragmentGenerator);
         }
 
         private void Awake()
@@ -44,6 +49,10 @@ namespace Crico
             this.mainCameraTargetHolder = cameraTargetHolder;
             this.touchSensor = touchSensor;
             runtimeCircleClipper.Init(camera);
+            fragmentGenerator.Init(camera);
+            InputReceiver inputReceiver = runtimeCircleClipper.GetComponent<InputReceiver>();
+            touchSensor.onDragInCanvasUnits.AddListener(inputReceiver.OnDrag);
+            touchSensor.onPointerDown.AddListener(inputReceiver.OnPointerDown);
         }
 
         private bool CheckStageWon()

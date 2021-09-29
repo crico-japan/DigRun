@@ -9,7 +9,7 @@ public class FragmentController : MonoBehaviour
     void Start()
     {
         this.transform.DOScale(Vector3.zero, 1.0f)
-            .OnComplete(()=> 
+            .OnComplete(() =>
             {
                 this.transform.DOKill();
                 Destroy(gameObject);

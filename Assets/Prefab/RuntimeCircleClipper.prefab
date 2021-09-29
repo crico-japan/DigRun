@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068718552511510154}
   - component: {fileID: 6068718552511510165}
+  - component: {fileID: 978622725555837118}
   m_Layer: 0
   m_Name: RuntimeCircleClipper
   m_TagString: Untagged
@@ -47,3 +48,19 @@ MonoBehaviour:
   diameter: 1.1
   segmentCount: 20
   touchMoveDistance: 0
+  mainCamera: {fileID: 0}
+  onPointerDown: {fileID: 0}
+  touchUtil: {fileID: 0}
+  centerPosition: {fileID: 0}
+--- !u!114 &978622725555837118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068718552511510164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9930f1a6657ec9447b28435cd40f5d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
