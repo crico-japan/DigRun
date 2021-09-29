@@ -20,7 +20,7 @@ namespace Crico
         FragmentGenerator fragmentGenerator = null;
 
         [SerializeField]
-        AgentStatus player = null;
+        GameObject player = null;
 
         Trigger mainCameraStartStopTrigger = null;
         TargetHolder mainCameraTargetHolder = null;
@@ -104,6 +104,8 @@ namespace Crico
 
             //
             mainCameraTargetHolder.SetTarget(player.gameObject);
+
+            player.GetComponent<GravityFreeAgent>().isRunning = true;
         }
 
         public void StopPlaying()

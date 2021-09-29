@@ -71,14 +71,6 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
     [SerializeField]
     bool useInputReceiver = false;
 
-    [SerializeField]
-    Text onPointerDown = null;
-
-    [SerializeField]
-    Text touchUtil = null;
-
-    [SerializeField]
-    Text centerPosition = null;
     public ClipBounds GetBounds()
     {
         if (touchPhase == TouchPhase.Began)
@@ -123,6 +115,7 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
     {
         mainCamera = camera;
         cameraZPos = Mathf.Abs(camera.transform.position.z - terrain.transform.position.z);
+        //cameraZPos = -Camera.main.transform.position.z;
         radius = diameter / 2f;
     }
 
@@ -146,7 +139,6 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
         {
             UpdateTouch();
         }
-        centerPosition.text = "CenterPosition：" + currentTouchPoint.ToString();
     }
 
 
@@ -184,7 +176,6 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
         touchPhase = TouchPhase.Began;
         BuildVertices(currentTouchPoint);
         terrain.ExecuteClip(this);
-        onPointerDown.text = "OnPointerDown：" + position.ToString();
     }
     void UpdateTouch()
     {
@@ -192,7 +183,6 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
         {
             Touch touch = TouchUtility.GetTouch(0);
             Vector2 touchPosition = touch.position;
-            touchUtil.text = "TouchUtility：" + touchPosition.ToString();
             touchPhase = touch.phase;
             if (touch.phase == TouchPhase.Began)
             {

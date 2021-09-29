@@ -32,9 +32,6 @@ public class DestructibleTerrain : Subject, IObserver
 
     private DestructibleBlock[] blocks;
 
-    [SerializeField]
-    Text offset = null;
-
     private void Awake()
     {
         BlockSimplification.epsilon = (int64)(simplifyEpsilonPercent / 100f * blockSize * VectorEx.float2int64);
@@ -89,7 +86,6 @@ public class DestructibleTerrain : Subject, IObserver
 
     public Vector2 GetPositionOffset()
     {
-        offset.text = ("TerrainOffset：") + transform.position.ToString();
         return transform.position;
     }
 
