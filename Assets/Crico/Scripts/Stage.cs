@@ -30,6 +30,7 @@ namespace Crico
         bool gameOver = false;
         bool stageWon = false;
 
+        bool playerCharaceterArrived = false;
 
         private void AssertInspectorVars()
         {
@@ -57,7 +58,7 @@ namespace Crico
 
         private bool CheckStageWon()
         {
-            bool result = false;
+            bool result = playerCharaceterArrived;
             
             return result;
         }
@@ -105,7 +106,7 @@ namespace Crico
             //
             mainCameraTargetHolder.SetTarget(player.gameObject);
 
-            player.GetComponent<GravityFreeAgent>().isRunning = true;
+            //player.GetComponent<GravityFreeAgent>().isRunning = true;
         }
 
         public void StopPlaying()
@@ -123,6 +124,10 @@ namespace Crico
             return gameOver;
         }
 
+        public void SetPlayerCharaceterArrived()
+        {
+            playerCharaceterArrived = true;
+        }
     }
 
 }

@@ -111,23 +111,23 @@ public class GravityFreeAgent : MonoBehaviour
 
     [SerializeField]
     Vector3 normal;
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        foreach (var point in rayPoints)
-        {
-            Gizmos.DrawSphere(point.position, 0.1f);
-        }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    foreach (var point in rayPoints)
+    //    {
+    //        Gizmos.DrawSphere(point.position, 0.1f);
+    //    }
 
-        Gizmos.DrawRay(transform.position, transform.position + (normal*rayLength));
+    //    Gizmos.DrawRay(transform.position, transform.position + (normal*rayLength));
 
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(bottom.position, bottom.position + (-transform.up*3));
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawLine(bottom.position, bottom.position + (-transform.up*3));
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + (transform.right * 3));
-        //Gizmos.color = Color.blue;
-        //Gizmos.DrawRay(transform.position, transform.forward);
-        //Gizmos.DrawRay()
-    }
+    //    Gizmos.color = Color.blue;
+    //    Gizmos.DrawLine(transform.position, transform.position + (transform.right * 3));
+    //    //Gizmos.color = Color.blue;
+    //    //Gizmos.DrawRay(transform.position, transform.forward);
+    //    //Gizmos.DrawRay()
+    //}
 }

@@ -10,6 +10,9 @@ public class WalkBehaviour : AgentBehaviour
     float moveSpeed = 2.0f;
 
     [SerializeField]
+    float gravityScale = 0.8f;
+
+    [SerializeField]
     Transform left;
 
     [SerializeField]
@@ -22,14 +25,20 @@ public class WalkBehaviour : AgentBehaviour
     int numPoints = 10;
 
     [SerializeField]
+    float rayLength = 0.5f;
+
+    [SerializeField]
     Agent agent;
     private List<Transform> rayPoints = new List<Transform>();
     float width;
     float space;
 
+    [SerializeField]
     Vector3 normal;
 
     bool isRunnning = false;
+    int layerMask = 1 << LayerNameMask.GroundMask;
+
     private void Awake()
     {
         width = Mathf.Abs(right.position.x - left.position.x);
@@ -65,9 +74,9 @@ public class WalkBehaviour : AgentBehaviour
         normal = Vector3.up;
 
         RaycastHit hit;
-        foreach(var point in rayPoints)
+        foreach (var point in rayPoints)
         {
-            if (Physics.Raycast(point.position, agent.transform.up.normalized, out hit, 0.5f))
+            if (Physics.Raycast(point.position, -agent.transform.up.normalized, out hit, rayLength/*, layerMask*/))
             {
                 var normalBuf = hit.normal;
                 normalBuf.z = 0;
@@ -95,11 +104,11 @@ public class WalkBehaviour : AgentBehaviour
         agent.transform.position = agent.transform.position + (agent.transform.right * moveSpeed * Time.fixedDeltaTime);
 
         RaycastHit hit;
-        if (Physics.Raycast(buttom.position, -agent.transform.up, out hit, 3))
+        if (Physics.Raycast(buttom.position, -agent.transform.up, out hit, 0.5f, layerMask))
         {
-            if (hit.distance > 0.05f)
+            if (hit.distance > 0.1f)
             {
-                agent.transform.position = agent.transform.position + (-agent.transform.up * Physics.gravity.magnitude * Time.fixedDeltaTime);
+                agent.transform.position = agent.transform.position + (-agent.transform.up * Physics.gravity.magnitude * gravityScale * Time.fixedDeltaTime);
             }
         }
     }
@@ -107,11 +116,13 @@ public class WalkBehaviour : AgentBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        foreach(var point in rayPoints)
+        foreach (var point in rayPoints)
         {
             Gizmos.DrawSphere(point.position, 0.1f);
+            Gizmos.DrawLine(point.position, point.position + (-agent.transform.up * rayLength));
         }
 
+        Gizmos.color = Color.black;
         Gizmos.DrawRay(agent.transform.position, agent.transform.position + (normal * 5));
 
         Gizmos.color = Color.green;
