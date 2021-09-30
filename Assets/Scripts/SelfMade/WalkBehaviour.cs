@@ -127,5 +127,9 @@ public class WalkBehaviour : AgentBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawLine(buttom.position, buttom.position + (agent.transform.up * 3));
+
+        Gizmos.color = Color.blue;
+        Vector3 u = new Vector3(normal.y, -normal.x);
+
     }
 }
