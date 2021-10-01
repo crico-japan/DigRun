@@ -51,9 +51,6 @@ namespace Crico
             this.touchSensor = touchSensor;
             runtimeCircleClipper.Init(camera);
             fragmentGenerator.Init(camera);
-            InputReceiver inputReceiver = runtimeCircleClipper.GetComponent<InputReceiver>();
-            touchSensor.onDragInCanvasUnits.AddListener(inputReceiver.OnDrag);
-            touchSensor.onPointerDown.AddListener(inputReceiver.OnPointerDown);
         }
 
         private bool CheckStageWon()

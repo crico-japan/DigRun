@@ -8,7 +8,7 @@ using Vector2f = UnityEngine.Vector2;
 using UnityEngine.UI;
 using Crico.AI;
 
-[RequireComponent(typeof(InputReceiver))]
+//[RequireComponent(typeof(InputReceiver))]
 public class RuntimeCircleClipper : MonoBehaviour, IClip
 {
     private struct TouchLineOverlapCheck 
@@ -123,8 +123,8 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
     {
         if(useInputReceiver == true)
         {
-            GetComponent<InputReceiver>().onDrag.AddListener(OnDragEvent);
-            GetComponent<InputReceiver>().onPointerDown.AddListener(OnPointerDownEvent);
+            //GetComponent<InputReceiver>().onDrag.AddListener(OnDragEvent);
+            //GetComponent<InputReceiver>().onPointerDown.AddListener(OnPointerDownEvent);
         }
     }
 
@@ -161,22 +161,22 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
 
     }
 
-    private void OnDragEvent(Vector2 distInCanvas)
-    {
-        if (distInCanvas.magnitude == 0f)
-        {
-            return;
-        }
-    }
+    //private void OnDragEvent(Vector2 distInCanvas)
+    //{
+    //    if (distInCanvas.magnitude == 0f)
+    //    {
+    //        return;
+    //    }
+    //}
 
-    private void OnPointerDownEvent(Vector2 position)
-    {
-        Vector2 XOYPlaneLocation = mainCamera.ScreenToWorldPoint(new Vector3(position.x, position.y, cameraZPos));
-        currentTouchPoint = XOYPlaneLocation - terrain.GetPositionOffset();
-        touchPhase = TouchPhase.Began;
-        BuildVertices(currentTouchPoint);
-        terrain.ExecuteClip(this);
-    }
+    //private void OnPointerDownEvent(Vector2 position)
+    //{
+    //    Vector2 XOYPlaneLocation = mainCamera.ScreenToWorldPoint(new Vector3(position.x, position.y, cameraZPos));
+    //    currentTouchPoint = XOYPlaneLocation - terrain.GetPositionOffset();
+    //    touchPhase = TouchPhase.Began;
+    //    BuildVertices(currentTouchPoint);
+    //    terrain.ExecuteClip(this);
+    //}
     void UpdateTouch()
     {
         if (TouchUtility.TouchCount > 0)
