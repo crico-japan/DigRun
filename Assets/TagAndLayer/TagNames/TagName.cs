@@ -14,4 +14,5 @@ public static class TagName
 	public const string Enemy = "Enemy";
 	public const string Bullet = "Bullet";
 	public const string Ground = "Ground";
+	public const string MiniMapCamera = "MiniMapCamera";
 }
