@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ScreenshotWindowConfig
   m_EditorClassIdentifier: 
   m_Config:
-    m_DestinationFolder: 3
+    m_DestinationFolder: 0
     m_RelativePath: Screenshots/
-    m_RootedPath: 
+    m_RootedPath: D:/Job/Crico/Project/DigRun/SS
     m_ExportToPhoneGallery: 1
     m_FileName: '{width}x{height}-screenshot'
     m_OverwriteFiles: 0
@@ -151,8 +151,34 @@ MonoBehaviour:
       m_PPI: 0
       m_ForcedUnityPPI: 0
       m_DeviceCanvas: {fileID: 0}
-      m_Ratio: 4:3
+      m_Ratio: 2:1~
       m_FileName: 
+      m_IgnoreOrientation: 0
+      m_SafeAreaPortrait:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_SafeAreaLandscapeLeft:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+    - m_Active: 1
+      m_Width: 1080
+      m_Height: 1920
+      m_Scale: 1
+      m_Orientation: 0
+      m_ResolutionName: 
+      m_Category: 
+      m_Platform: 
+      m_PPI: 0
+      m_ForcedUnityPPI: 0
+      m_DeviceCanvas: {fileID: 0}
+      m_Ratio: 9:16
+      m_FileName: D:/Job/Crico/Project/DigRun/SS/1080x1920-screenshot.png
       m_IgnoreOrientation: 0
       m_SafeAreaPortrait:
         serializedVersion: 2
@@ -168,8 +194,8 @@ MonoBehaviour:
         height: 0
     m_GameViewResolution:
       m_Active: 1
-      m_Width: 351
-      m_Height: 468
+      m_Width: 1080
+      m_Height: 1920
       m_Scale: 1
       m_Orientation: 0
       m_ResolutionName: GameView

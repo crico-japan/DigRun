@@ -26,6 +26,8 @@ public class DestructibleBlock : Subject
     private MeshRenderer meshRenderer;
     GameObject obj;
     Rigidbody rigidbody;
+
+    private Obi.ObiCollider obiCollider;
     private void Awake()
     {
         mesh = new Mesh();
@@ -39,6 +41,8 @@ public class DestructibleBlock : Subject
         obj = new GameObject();
         collider = obj.AddComponent<MeshCollider>();
         obj.GetComponent<MeshCollider>().sharedMesh = gameObject.GetComponent<DestructibleBlock>().Mesh;
+        obj.AddComponent<Obi.ObiCollider>();
+        obiCollider = obj.GetComponent<Obi.ObiCollider>();
         obj.transform.SetParent(transform);
         obj.transform.localPosition = Vector3.zero;
     }
@@ -179,10 +183,10 @@ public class DestructibleBlock : Subject
         {
             for (int i = colliderCount - 1; i >= edgesCount; i--)
             {
-                if (gameObject.GetComponent<Obi.ObiCollider2D>() != null)
-                {
-                    Destroy(gameObject.GetComponent<Obi.ObiCollider2D>());
-                }
+                //if (gameObject.GetComponent<Obi.ObiCollider2D>() != null)
+                //{
+                //    Destroy(gameObject.GetComponent<Obi.ObiCollider2D>());
+                //}
                 Destroy(colliders[i]);
                 colliders.RemoveAt(i);
             }
@@ -222,7 +226,7 @@ public class DestructibleBlock : Subject
         {
             obj.GetComponent<MeshCollider>().sharedMesh = mesh;
             collider.sharedMesh = mesh;
-            //obiCollider.sourceCollider = collider;
+            obiCollider.sourceCollider = collider;
         }
         else
         {

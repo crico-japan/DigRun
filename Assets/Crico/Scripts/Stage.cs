@@ -20,6 +20,9 @@ namespace Crico
         FragmentGenerator fragmentGenerator = null;
 
         [SerializeField]
+        Obi.ObiParticleRenderer[] particleRenderers;
+
+        [SerializeField]
         GameObject player = null;
 
         Trigger mainCameraStartStopTrigger = null;
@@ -51,6 +54,11 @@ namespace Crico
             this.touchSensor = touchSensor;
             runtimeCircleClipper.Init(camera);
             fragmentGenerator.Init(camera);
+
+            if(particleRenderers != null)
+            {
+                camera.GetComponent<Obi.ObiFluidRenderer>().particleRenderers = particleRenderers;
+            }
         }
 
         private bool CheckStageWon()

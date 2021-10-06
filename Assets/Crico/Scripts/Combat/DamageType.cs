@@ -8,6 +8,7 @@
         PLAYER_RANGED = 1 << 1,
         ENEMY_MELEE = 1 << 2,
         ENEMY_RANGED = 1 << 3,
+        Fluid = 1 << 4,
     }
 
 }

@@ -1279,6 +1279,10 @@ GameObject:
   - component: {fileID: 2568394769059502934}
   - component: {fileID: 2656543415900589827}
   - component: {fileID: 6976952989708650677}
+  - component: {fileID: 1489321822856077040}
+  - component: {fileID: 6002771144483772395}
+  - component: {fileID: 8836515842025179144}
+  - component: {fileID: 8056011226960064211}
   - component: {fileID: 5460134757705828141}
   - component: {fileID: 5460134757705828140}
   m_Layer: 0
@@ -1391,6 +1395,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
+--- !u!114 &1489321822856077040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460134757705828143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5552144dbc0557418753861e565641a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReportDamageSource:
+    m_PersistentCalls:
+      m_Calls: []
+  damageType: 0
+--- !u!114 &6002771144483772395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460134757705828143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b325fe7728a264845ad9d6d1214af6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 1
+--- !u!114 &8836515842025179144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460134757705828143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5552144dbc0557418753861e565641a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ReportDamageSource:
+    m_PersistentCalls:
+      m_Calls: []
+  damageType: -1
+--- !u!114 &8056011226960064211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460134757705828143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b325fe7728a264845ad9d6d1214af6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 1
 --- !u!136 &5460134757705828141
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1562,6 +1624,7 @@ MonoBehaviour:
   numPoints: 10
   rayLength: 0.5
   agent: {fileID: 733768670272578360}
+  obiCollider: {fileID: 0}
   normal: {x: 0, y: 0, z: 0}
 --- !u!1 &5800541846432150899
 GameObject:

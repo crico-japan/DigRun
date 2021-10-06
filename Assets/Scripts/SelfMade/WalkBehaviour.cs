@@ -29,6 +29,11 @@ public class WalkBehaviour : AgentBehaviour
 
     [SerializeField]
     Agent agent;
+
+    [SerializeField]
+    Obi.ObiCollider obiCollider = null;
+
+    HashSet<int> hitParticle = new HashSet<int>();
     private List<Transform> rayPoints = new List<Transform>();
     float width;
     float space;
@@ -104,7 +109,7 @@ public class WalkBehaviour : AgentBehaviour
         agent.transform.position = agent.transform.position + (agent.transform.right * moveSpeed * Time.fixedDeltaTime);
 
         RaycastHit hit;
-        if (Physics.Raycast(buttom.position, -agent.transform.up, out hit, 0.5f, layerMask))
+        if (Physics.Raycast(buttom.position, -agent.transform.up, out hit, float.PositiveInfinity, layerMask))
         {
             if (hit.distance > 0.1f)
             {
