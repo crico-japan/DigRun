@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Crico.AI;
+using Crico.AI.States;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,11 +19,18 @@ public class GravityFreeAgent : MonoBehaviour
     float moveSpeed = 2.5f;
 
     [SerializeField]
+    float rayLength = 0.5f;
+
+    [SerializeField]
     Transform bottom = null;
 
     List<Transform> rayPoints = new List<Transform>();
     float width;
     float space;
+
+    public bool isRunning = false;
+
+    int layerMask = 1 << LayerNameMask.GroundMask;
 
     private void Awake()
     {
@@ -36,7 +45,6 @@ public class GravityFreeAgent : MonoBehaviour
             child.transform.position = new Vector3(left.position.x + (i * space), left.position.y, left.position.z);
             rayPoints.Add(child.transform);
         }
-
     }
     // Start is called before the first frame update
     void Start()
@@ -49,79 +57,77 @@ public class GravityFreeAgent : MonoBehaviour
     {
         normal = Vector3.up;
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position = transform.position + (transform.right * moveSpeed * Time.fixedDeltaTime);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position = transform.position + (transform.right * -moveSpeed * Time.fixedDeltaTime);
-        }
+        //if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    transform.position = transform.position + (transform.right * moveSpeed * Time.fixedDeltaTime);
+        //}
+        //else if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    transform.position = transform.position + (transform.right * -moveSpeed * Time.fixedDeltaTime);
+        //}
 
         RaycastHit hit;
 
         foreach (var point in rayPoints)
         {
-            if (Physics.Raycast(point.position, -transform.up, out hit, float.PositiveInfinity))
+            if (Physics.Raycast(point.position, -transform.up.normalized, out hit, rayLength, layerMask))
             {
-                normal += hit.normal;
+                //念のためzの値を消去
+                var normalbuf = hit.normal;
+                normalbuf.z = 0;
+                normal += normalbuf;
             }
             else
             {
-                normal += transform.up;
+                //normal += transform.up.normalized;
+                normal += Vector3.up;
             }
         }
+    }
 
+    private void FixedUpdate()
+    {
+        if(isRunning == false)
+        {
+            return;
+        }
         //傾きを求める
         Quaternion q = Quaternion.FromToRotation(transform.up, normal.normalized);
 
         //自身を回転させる
         transform.rotation *= q;
-    }
 
-    private void FixedUpdate()
-    {
         transform.position = transform.position + (transform.right * moveSpeed * Time.fixedDeltaTime);
 
         RaycastHit hit;
-        if (Physics.Raycast(bottom.position, -transform.up, out hit, 1))
+        if (Physics.Raycast(bottom.position, -transform.up, out hit, 0.5f, layerMask))
         {
-            if (hit.distance > 0.1f)
+            if (hit.distance > 0.05f)
             {
                 transform.position = transform.position + (-transform.up * Physics.gravity.magnitude * Time.fixedDeltaTime);
             }
         }
-
-        //var bottom = (left.position + right.position) / 2;
-        //bottom.y = this.bottom.position.y;
-        //RaycastHit hit;
-        //if (Physics.Raycast(bottom, -transform.up, out hit, float.PositiveInfinity))
-        //{
-        //    if (hit.distance > 0.05f)
-        //    {
-        //        transform.position = transform.position + (-transform.up * Physics.gravity.magnitude * Time.fixedDeltaTime);
-        //    }
-        //}
-        //else
-        //{
-        //    transform.position = transform.position + (Vector3.down * Physics.gravity.magnitude * Time.fixedDeltaTime);
-        //}
     }
+
+    [SerializeField]
     Vector3 normal;
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        foreach (var point in rayPoints)
-        {
-            Gizmos.DrawSphere(point.position, 0.1f);
-        }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    foreach (var point in rayPoints)
+    //    {
+    //        Gizmos.DrawSphere(point.position, 0.1f);
+    //    }
 
-        Gizmos.DrawRay(transform.position, transform.position + (normal*5));
+    //    Gizmos.DrawRay(transform.position, transform.position + (normal*rayLength));
 
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(bottom.position, bottom.position + (-transform.up*3));
-        //Gizmos.color = Color.blue;
-        //Gizmos.DrawRay(transform.position, transform.forward);
-        //Gizmos.DrawRay()
-    }
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawLine(bottom.position, bottom.position + (-transform.up*3));
+
+    //    Gizmos.color = Color.blue;
+    //    Gizmos.DrawLine(transform.position, transform.position + (transform.right * 3));
+    //    //Gizmos.color = Color.blue;
+    //    //Gizmos.DrawRay(transform.position, transform.forward);
+    //    //Gizmos.DrawRay()
+    //}
 }

@@ -4,6 +4,7 @@ using Vector2f = UnityEngine.Vector2;
 using Vector2i = ClipperLib.IntPoint;
 
 using int64 = System.Int64;
+using UnityEngine.UI;
 
 public class DestructibleTerrain : Subject, IObserver
 {
@@ -61,10 +62,10 @@ public class DestructibleTerrain : Subject, IObserver
                 List<List<Vector2i>> polygons = new List<List<Vector2i>>();
 
                 List<Vector2i> vertices = new List<Vector2i>();
-                vertices.Add(new Vector2i { x = x * blockSizeScaled, y = (y + 1) * blockSizeScaled });
-                vertices.Add(new Vector2i { x = x * blockSizeScaled, y = y * blockSizeScaled });
-                vertices.Add(new Vector2i { x = (x + 1) * blockSizeScaled, y = y * blockSizeScaled });
-                vertices.Add(new Vector2i { x = (x + 1) * blockSizeScaled, y = (y + 1) * blockSizeScaled });
+                vertices.Add(new Vector2i { x = x * blockSizeScaled, y = (y + 1) * blockSizeScaled });  //左上
+                vertices.Add(new Vector2i { x = x * blockSizeScaled, y = y * blockSizeScaled });    //左下
+                vertices.Add(new Vector2i { x = (x + 1) * blockSizeScaled, y = y * blockSizeScaled });  //右下
+                vertices.Add(new Vector2i { x = (x + 1) * blockSizeScaled, y = (y + 1) * blockSizeScaled });    //右上
 
                 polygons.Add(vertices);
 
@@ -77,8 +78,8 @@ public class DestructibleTerrain : Subject, IObserver
 
                 block.UpdateGeometryWithMoreVertices(polygons, width, height, depth);
                 block.AddObserver(this);
-                //block.tag = TagName.Ground;
-                //block.gameObject.layer = LayerName.Ground;
+                block.tag = TagName.Ground;
+                block.gameObject.layer = LayerName.Ground;
             }
         }
     }
@@ -172,4 +173,28 @@ public class DestructibleTerrain : Subject, IObserver
     {
         Notify();
     }
+
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    List<Vector2i> vertices = new List<Vector2i>();
+
+    //    for (int x = 0; x < resolutionX; x++)
+    //    {
+    //        for (int y = 0; y < resolutionY; y++)
+    //        {
+    //            List<List<Vector2i>> polygons = new List<List<Vector2i>>();
+
+    //            vertices.Add(new Vector2i { x = x * blockSizeScaled, y = (y + 1) * blockSizeScaled });
+    //            vertices.Add(new Vector2i { x = x * blockSizeScaled, y = y * blockSizeScaled });
+    //            vertices.Add(new Vector2i { x = (x + 1) * blockSizeScaled, y = y * blockSizeScaled });
+    //            vertices.Add(new Vector2i { x = (x + 1) * blockSizeScaled, y = (y + 1) * blockSizeScaled });
+    //        }
+    //    }
+
+    //    foreach(var vertex in vertices)
+    //    {
+    //        Gizmos.DrawSphere(vertex.ToVector3f(), 0.5f);
+    //    }
+    //}
 }

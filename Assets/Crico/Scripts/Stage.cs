@@ -1,5 +1,6 @@
 using Crico.AI;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 namespace Crico
@@ -9,16 +10,33 @@ namespace Crico
         [SerializeField] UnityEvent startEvent = new UnityEvent();
         [SerializeField] UnityEvent winEvent = new UnityEvent();
 
+        [SerializeField]
+        DestructibleTerrain destructibleTerrain = null;
+
+        [SerializeField]
+        RuntimeCircleClipper runtimeCircleClipper = null;
+
+        [SerializeField]
+        FragmentGenerator fragmentGenerator = null;
+
+        [SerializeField]
+        GameObject player = null;
+
         Trigger mainCameraStartStopTrigger = null;
         TargetHolder mainCameraTargetHolder = null;
+        TouchSensor touchSensor = null;
 
         bool playing = false;
         bool gameOver = false;
         bool stageWon = false;
 
+        bool playerCharaceterArrived = false;
 
         private void AssertInspectorVars()
         {
+            Assert.IsNotNull(player);
+            Assert.IsNotNull(runtimeCircleClipper);
+            Assert.IsNotNull(fragmentGenerator);
         }
 
         private void Awake()
@@ -30,11 +48,14 @@ namespace Crico
         {
             this.mainCameraStartStopTrigger = mainCameraStartStopTrigger;
             this.mainCameraTargetHolder = cameraTargetHolder;
+            this.touchSensor = touchSensor;
+            runtimeCircleClipper.Init(camera);
+            fragmentGenerator.Init(camera);
         }
 
         private bool CheckStageWon()
         {
-            bool result = false;
+            bool result = playerCharaceterArrived;
             
             return result;
         }
@@ -78,6 +99,11 @@ namespace Crico
             playing = true;
             startEvent.Invoke();
             mainCameraStartStopTrigger.SetTrigger();
+
+            //
+            mainCameraTargetHolder.SetTarget(player.gameObject);
+
+            //player.GetComponent<GravityFreeAgent>().isRunning = true;
         }
 
         public void StopPlaying()
@@ -95,6 +121,10 @@ namespace Crico
             return gameOver;
         }
 
+        public void SetPlayerCharaceterArrived()
+        {
+            playerCharaceterArrived = true;
+        }
     }
 
 }

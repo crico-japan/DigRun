@@ -11,9 +11,6 @@ public class SquareClipper : ClipperBase
     public float height;
     private Vector2 clipPosition;
 
-    [SerializeField]
-    GameObject sphere = null;
-
     public override bool CheckBlockOverlapping(Vector2 p, float size)
     {
         float dx = Mathf.Abs(clipPosition.x - p.x) - width/2 - size / 2;
@@ -71,11 +68,6 @@ public class SquareClipper : ClipperBase
         if(terrain != null)
         {
             clipPosition = positionWorldSpace - terrain.GetPositionOffset();
-            if(sphere != null)
-            {
-                var obj = Instantiate(sphere, clipPosition, Quaternion.identity);
-                obj.transform.SetParent(gameObject.transform);
-            }
             terrain.ExecuteClip(this, false);
         }
     }

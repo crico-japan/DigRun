@@ -18,6 +18,7 @@ namespace Crico.AI.States
 
         private void OnDrag(Vector2 input)
         {
+            agentInputReceiver.onDrag.RemoveListener(OnDrag);
             agentInputReceiver = null;
             inputReceived = true;
         }

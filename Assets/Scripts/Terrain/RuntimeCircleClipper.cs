@@ -2,10 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Crico;
 using Vector2i = ClipperLib.IntPoint;
 using Vector2f = UnityEngine.Vector2;
+using UnityEngine.UI;
+using Crico.AI;
 
+//[RequireComponent(typeof(InputReceiver))]
 public class RuntimeCircleClipper : MonoBehaviour, IClip
 {
     private struct TouchLineOverlapCheck 
@@ -60,26 +63,13 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
 
     private List<Vector2i> vertices = new List<Vector2i>();
 
+    [SerializeField]
     private Camera mainCamera;
 
     private float cameraZPos;
 
-    public bool CheckBlockOverlapping(Vector2f p, float size)
-    {
-        if (touchPhase == TouchPhase.Began)
-        {
-            float dx = Mathf.Abs(currentTouchPoint.x - p.x) - radius - size / 2;
-            float dy = Mathf.Abs(currentTouchPoint.y - p.y) - radius - size / 2;
-            return dx < 0f && dy < 0f;
-        }
-        else if (touchPhase == TouchPhase.Moved)
-        {          
-            float distance = touchLine.GetDistance(p) - radius - size / touchLine.dividend;
-            return distance < 0f;
-        }
-        else
-            return false;
-    }
+    [SerializeField]
+    bool useInputReceiver = false;
 
     public ClipBounds GetBounds()
     {
@@ -121,11 +111,21 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
         return vertices;
     }
 
+    public void Init(Camera camera)
+    {
+        mainCamera = camera;
+        cameraZPos = Mathf.Abs(camera.transform.position.z - terrain.transform.position.z);
+        //cameraZPos = -Camera.main.transform.position.z;
+        radius = diameter / 2f;
+    }
+
     void Awake()
     {
-        mainCamera = Camera.main;
-        cameraZPos = mainCamera.transform.position.z;
-        radius = diameter / 2f;
+        if(useInputReceiver == true)
+        {
+            //GetComponent<InputReceiver>().onDrag.AddListener(OnDragEvent);
+            //GetComponent<InputReceiver>().onPointerDown.AddListener(OnPointerDownEvent);
+        }
     }
 
     void Start()
@@ -135,20 +135,58 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
 
     void Update()
     {
-        UpdateTouch();
+        if(useInputReceiver == false)
+        {
+            UpdateTouch();
+        }
     }
 
+
+    public bool CheckBlockOverlapping(Vector2f p, float size)
+    {
+        if (touchPhase == TouchPhase.Began)
+        {
+            float dx = Mathf.Abs(currentTouchPoint.x - p.x) - radius - size / 2;
+            float dy = Mathf.Abs(currentTouchPoint.y - p.y) - radius - size / 2;
+            return dx < 0f && dy < 0f;
+        }
+        else if (touchPhase == TouchPhase.Moved)
+        {
+            float distance = touchLine.GetDistance(p) - radius - size / touchLine.dividend;
+            return distance < 0f;
+        }
+        else
+            return false;
+
+
+    }
+
+    //private void OnDragEvent(Vector2 distInCanvas)
+    //{
+    //    if (distInCanvas.magnitude == 0f)
+    //    {
+    //        return;
+    //    }
+    //}
+
+    //private void OnPointerDownEvent(Vector2 position)
+    //{
+    //    Vector2 XOYPlaneLocation = mainCamera.ScreenToWorldPoint(new Vector3(position.x, position.y, cameraZPos));
+    //    currentTouchPoint = XOYPlaneLocation - terrain.GetPositionOffset();
+    //    touchPhase = TouchPhase.Began;
+    //    BuildVertices(currentTouchPoint);
+    //    terrain.ExecuteClip(this);
+    //}
     void UpdateTouch()
     {
         if (TouchUtility.TouchCount > 0)
         {
             Touch touch = TouchUtility.GetTouch(0);
             Vector2 touchPosition = touch.position;
-
             touchPhase = touch.phase;
             if (touch.phase == TouchPhase.Began)
             {
-                Vector2 XOYPlaneLocation = mainCamera.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, -cameraZPos));
+                Vector2 XOYPlaneLocation = mainCamera.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, cameraZPos));
                 currentTouchPoint = XOYPlaneLocation - terrain.GetPositionOffset();
 
                 BuildVertices(currentTouchPoint);
@@ -159,7 +197,7 @@ public class RuntimeCircleClipper : MonoBehaviour, IClip
             }
             else if (touch.phase == TouchPhase.Moved)
             {
-                Vector2 XOYPlaneLocation = mainCamera.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, -cameraZPos));
+                Vector2 XOYPlaneLocation = mainCamera.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, cameraZPos));
                 currentTouchPoint = XOYPlaneLocation - terrain.GetPositionOffset();
 
                 if ((currentTouchPoint - previousTouchPoint).sqrMagnitude <= touchMoveDistance * touchMoveDistance)
