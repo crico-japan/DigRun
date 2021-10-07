@@ -5,23 +5,23 @@ using DG.Tweening;
 
 public class RockFracture : MonoBehaviour
 {
-    [SerializeField]
-    Collider2D trigger = null;
-    public Collider2D Trigger
-    {
-        get { return trigger; }
-    }
+    //[SerializeField]
+    //Collider trigger = null;
+    //public Collider Trigger
+    //{
+    //    get { return trigger; }
+    //}
 
     [SerializeField]
-    Collider2D collison = null;
-    public Collider2D Collision
+    Collider collison = null;
+    public Collider Collision
     {
         get { return collison; }
     }
 
     [SerializeField]
-    new Rigidbody2D rigidbody;
-    public Rigidbody2D Rigidbody
+    new Rigidbody rigidbody;
+    public Rigidbody Rigidbody
     {
         get { return rigidbody; }
     }

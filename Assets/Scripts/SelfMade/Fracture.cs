@@ -26,24 +26,42 @@ public class Fracture : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void BrakeRock()
     {
-        if (collision.gameObject.GetComponent<Agent>() != null)
+        gameObject.GetComponent<Collider>().enabled = false;
+
+        for (int i = 0; i < fractures.Count; i++)
         {
-            gameObject.GetComponent<Collider2D>().enabled = false;
-
-            for (int i = 0; i < fractures.Count; i++)
-            {
-                fractures[i].Collision.gameObject.SetActive(true);
-                fractures[i].Rigidbody.simulated = true;
-                fractures[i].ScaleDown();
-            }
-
-            fractures[0].Rigidbody.AddForce(new Vector2(1, 2), ForceMode2D.Impulse);
-            fractures[1].Rigidbody.AddForce(new Vector2(-1, 2), ForceMode2D.Impulse);
-            fractures[2].Rigidbody.AddForce(new Vector2(1, 0), ForceMode2D.Impulse);
-            fractures[3].Rigidbody.AddForce(new Vector2(-1, 0), ForceMode2D.Impulse);
-
+            fractures[i].Collision.gameObject.SetActive(true);
+            fractures[i].Rigidbody.useGravity = true;
+            fractures[i].Rigidbody.isKinematic = false;
+            fractures[i].ScaleDown();
         }
+
+        fractures[0].Rigidbody.AddForce(new Vector2(1, 2), ForceMode.Impulse);
+        fractures[1].Rigidbody.AddForce(new Vector2(-1, 2), ForceMode.Impulse);
+        fractures[2].Rigidbody.AddForce(new Vector2(1, 0), ForceMode.Impulse);
+        fractures[3].Rigidbody.AddForce(new Vector2(-1, 0), ForceMode.Impulse);
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.GetComponent<Agent>() != null)
+    //    {
+    //        gameObject.GetComponent<Collider>().enabled = false;
+
+    //        for (int i = 0; i < fractures.Count; i++)
+    //        {
+    //            fractures[i].Collision.gameObject.SetActive(true);
+    //            fractures[i].Rigidbody.useGravity = true;
+    //            fractures[i].ScaleDown();
+    //        }
+
+    //        fractures[0].Rigidbody.AddForce(new Vector2(1, 2), ForceMode.Impulse);
+    //        fractures[1].Rigidbody.AddForce(new Vector2(-1, 2), ForceMode.Impulse);
+    //        fractures[2].Rigidbody.AddForce(new Vector2(1, 0), ForceMode.Impulse);
+    //        fractures[3].Rigidbody.AddForce(new Vector2(-1, 0), ForceMode.Impulse);
+
+    //    }
+    //}
 }

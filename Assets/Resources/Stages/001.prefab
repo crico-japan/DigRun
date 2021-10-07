@@ -323,6 +323,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7622637467721298531}
     m_Modifications:
+    - target: {fileID: 685115405377797534, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: damageType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 685115405377797534, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: onSuccessfulHit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 685115405377797534, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: onSuccessfulHit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 685115405377797534, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: onSuccessfulHit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7432700979191084839}
+    - target: {fileID: 685115405377797534, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: onSuccessfulHit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 685115405377797534, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: onSuccessfulHit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BrakeRock
+      objectReference: {fileID: 0}
+    - target: {fileID: 685115405377797534, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: onSuccessfulHit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Fracture, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 685115405377797534, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: onSuccessfulHit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1340458332645431381, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2914039717692920909, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313674962235843383, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336524168064521213, guid: e55871167a9ca364db12ba4719309b61,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6492344706225454886, guid: e55871167a9ca364db12ba4719309b61,
         type: 3}
       propertyPath: damageAmount
@@ -390,6 +450,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e55871167a9ca364db12ba4719309b61, type: 3}
+--- !u!114 &7432700979191084839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6492344706225454891, guid: e55871167a9ca364db12ba4719309b61,
+    type: 3}
+  m_PrefabInstance: {fileID: 4413302466189543436}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08a69552fc1f8e4596f694b52a310ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6795183221403682797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,6 +469,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 305915579091952503, guid: a3d14cc00003ada4699aef1273f4050e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.434
+      objectReference: {fileID: 0}
+    - target: {fileID: 305915579742428832, guid: a3d14cc00003ada4699aef1273f4050e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.093
+      objectReference: {fileID: 0}
     - target: {fileID: 4000422703145842062, guid: a3d14cc00003ada4699aef1273f4050e,
         type: 3}
       propertyPath: m_RootOrder
