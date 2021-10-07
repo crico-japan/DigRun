@@ -11,4 +11,7 @@ public static class LayerName
 	public const int Fragment = 6;
 	public const int Character = 7;
 	public const int Ground = 8;
+	public const int Goal = 9;
+	public const int MiniMapIcon = 10;
+	public const int Rock = 11;
 }

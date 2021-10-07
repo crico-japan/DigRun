@@ -28,12 +28,11 @@ public class WalkBehaviour : AgentBehaviour
     float rayLength = 0.5f;
 
     [SerializeField]
-    Agent agent;
+    float angelLimit = 60.0f;
 
     [SerializeField]
-    Obi.ObiCollider obiCollider = null;
+    Agent agent;
 
-    HashSet<int> hitParticle = new HashSet<int>();
     private List<Transform> rayPoints = new List<Transform>();
     float width;
     float space;
@@ -42,7 +41,7 @@ public class WalkBehaviour : AgentBehaviour
     Vector3 normal;
 
     bool isRunnning = false;
-    int layerMask = 1 << LayerNameMask.GroundMask;
+    int layerMask = 1 << LayerNameMask.GroundMask | 1 << LayerNameMask.RockMask;
 
     private void Awake()
     {
@@ -81,7 +80,7 @@ public class WalkBehaviour : AgentBehaviour
         RaycastHit hit;
         foreach (var point in rayPoints)
         {
-            if (Physics.Raycast(point.position, -agent.transform.up.normalized, out hit, rayLength/*, layerMask*/))
+            if (Physics.Raycast(point.position, -agent.transform.up.normalized, out hit, rayLength, layerMask))
             {
                 var normalBuf = hit.normal;
                 normalBuf.z = 0;
@@ -92,6 +91,7 @@ public class WalkBehaviour : AgentBehaviour
                 normal += Vector3.up;
             }
         }
+        agent.Rigidbody.velocity = Vector3.zero;
     }
 
     public void FixedUpdate()
@@ -104,9 +104,12 @@ public class WalkBehaviour : AgentBehaviour
         Quaternion q = Quaternion.FromToRotation(agent.transform.up, normal.normalized);
 
         //‰ñ“]‚³‚¹‚é
-        agent.transform.rotation *= q;
+        if(angelLimit > Vector3.Angle(Vector3.up, normal))
+        {
+            agent.transform.rotation *= q;
+            agent.transform.position = agent.transform.position + (agent.transform.right * moveSpeed * Time.fixedDeltaTime);
+        }
 
-        agent.transform.position = agent.transform.position + (agent.transform.right * moveSpeed * Time.fixedDeltaTime);
 
         RaycastHit hit;
         if (Physics.Raycast(buttom.position, -agent.transform.up, out hit, float.PositiveInfinity, layerMask))

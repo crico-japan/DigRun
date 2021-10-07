@@ -514,8 +514,8 @@ MonoBehaviour:
   buttom: {fileID: 3409809401716938306}
   numPoints: 10
   rayLength: 0.5
+  angelLimit: 60
   agent: {fileID: 7978837574681278409}
-  obiCollider: {fileID: 0}
   normal: {x: 0, y: 0, z: 0}
 --- !u!1 &3218307767367754174
 GameObject:
@@ -702,6 +702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3409809401888052177}
   - component: {fileID: 7978837574681278409}
+  - component: {fileID: 6350710635655079494}
   - component: {fileID: 3229060256193809674}
   - component: {fileID: 1658527508662437139}
   - component: {fileID: 5129772980771065767}
@@ -754,6 +755,21 @@ MonoBehaviour:
   animationStateParamName: state
   navMeshAgent: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
+--- !u!114 &6350710635655079494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409809401888052190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdc206e916718e4782fbd7b469e1f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 3115687135093099893}
+  inactiveStateNames:
+  - Dead
 --- !u!114 &3229060256193809674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62359d80fdc0e4315ab6331b78ec5b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kinematicForParticles: 0
+  kinematicForParticles: 1
 --- !u!1 &3409809402443535902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,6 +1583,7 @@ MonoBehaviour:
   obiCollider: {fileID: 6186482489140948504}
   solver: {fileID: 0}
   location: {fileID: 0}
+  threshold: 5
   damageType: 0
   damageAmount: 0
   forceAmount: 0

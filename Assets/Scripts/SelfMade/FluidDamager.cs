@@ -58,7 +58,10 @@ public class FluidDamager : MonoBehaviour
     private void Awake()
     {
         world = Obi.ObiColliderWorld.GetInstance();
-        solver.OnCollision += Solver_OnCollision;
+        if(solver != null)
+        {
+            solver.OnCollision += Solver_OnCollision;
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -110,6 +113,7 @@ public class FluidDamager : MonoBehaviour
                     if (hitParticle.Add(contact.bodyA))
                     {
                         CheckDrown(hitParticle.Count);
+                        Debug.Log("Particle Hit");
                     }
                 }
             }

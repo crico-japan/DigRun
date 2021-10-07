@@ -9,6 +9,7 @@ namespace Crico
     {
         [SerializeField] UnityEvent startEvent = new UnityEvent();
         [SerializeField] UnityEvent winEvent = new UnityEvent();
+        [SerializeField] UnityEvent loseEvent = new UnityEvent();
 
         [SerializeField]
         DestructibleTerrain destructibleTerrain = null;
@@ -23,7 +24,7 @@ namespace Crico
         Obi.ObiParticleRenderer[] particleRenderers;
 
         [SerializeField]
-        GameObject player = null;
+        AgentStatus player = null;
 
         Trigger mainCameraStartStopTrigger = null;
         TargetHolder mainCameraTargetHolder = null;
@@ -70,7 +71,7 @@ namespace Crico
 
         private bool CheckStageLost()
         {
-            bool result = false;
+            bool result = !player.IsAgentActive();
 
             return result;
         }
@@ -88,6 +89,10 @@ namespace Crico
             bool stageLost = CheckStageLost();
 
             gameOver = stageLost;
+            if(stageLost)
+            {
+                loseEvent.Invoke();
+            }
 
             if (!gameOver)
             {
