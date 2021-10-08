@@ -14,4 +14,5 @@ public static class LayerName
 	public const int Goal = 9;
 	public const int MiniMapIcon = 10;
 	public const int Rock = 11;
+	public const int Cadaver = 12;
 }

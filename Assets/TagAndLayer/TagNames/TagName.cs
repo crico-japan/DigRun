@@ -16,4 +16,5 @@ public static class TagName
 	public const string Ground = "Ground";
 	public const string MiniMapCamera = "MiniMapCamera";
 	public const string Rock = "Rock";
+	public const string Cadaver = "Cadaver";
 }

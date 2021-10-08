@@ -9,6 +9,7 @@
         ENEMY_MELEE = 1 << 2,
         ENEMY_RANGED = 1 << 3,
         Fluid = 1 << 4,
+        Rock = 1 << 5,
     }
 
 }

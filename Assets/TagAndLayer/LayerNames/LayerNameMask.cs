@@ -14,4 +14,5 @@ public static class LayerNameMask
 	public const int GoalMask = 512;
 	public const int MiniMapIconMask = 1024;
 	public const int RockMask = 2048;
+	public const int CadaverMask = 4096;
 }
