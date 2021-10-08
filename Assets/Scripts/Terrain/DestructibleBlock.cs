@@ -45,6 +45,7 @@ public class DestructibleBlock : Subject
         obiCollider = obj.GetComponent<Obi.ObiCollider>();
         obj.transform.SetParent(transform);
         obj.transform.localPosition = Vector3.zero;
+        obiCollider.gameObject.layer = LayerName.Ground;
     }
 
     public void SetMaterial(Material material)

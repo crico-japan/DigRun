@@ -41,7 +41,7 @@ public class WalkBehaviour : AgentBehaviour
     Vector3 normal;
 
     bool isRunnning = false;
-    int layerMask = 1 << LayerNameMask.GroundMask | 1 << LayerNameMask.RockMask;
+    int layerMask = 1 << LayerName.Ground | 1 << LayerName.Rock;
 
     private void Awake()
     {
@@ -72,6 +72,8 @@ public class WalkBehaviour : AgentBehaviour
         isRunnning = false;
     }
 
+    [SerializeField]
+    float radius = 0.2f;
     public override void Process(Agent agent)
     {
         base.Process(agent);
