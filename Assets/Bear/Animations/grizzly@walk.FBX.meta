@@ -1,0 +1,499 @@
+fileFormatVersion: 2
+guid: e695ade63d9499f439c7c70efd79ddd3
+timeCreated: 1533026684
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bear_Body_mesh
+    100002: bear_Fur_mesh
+    100004: bear_Teeth_mesh
+    100006: Circle001
+    100008: //RootNode
+    100010: grizzly_COM_ctrl
+    100012: grizzly_Head_bone
+    100014: grizzly_Head_ctrl
+    100016: grizzly_Jaw_bone
+    100018: grizzly_Jaw_ctrl
+    100020: grizzly_l_Claw-nub_bone
+    100022: grizzly_l_Claw_bone
+    100024: grizzly_l_Ear-nub_bone
+    100026: grizzly_l_Ear_bone
+    100028: grizzly_l_EarBase_bone
+    100030: grizzly_l_EarBase_ctrl
+    100032: grizzly_l_EarBase_ctrl001
+    100034: grizzly_l_EarBase_ctrl002
+    100036: grizzly_l_EyelidLower-nub_bone
+    100038: grizzly_l_EyelidLower_bone
+    100040: grizzly_l_EyelidLower_ctrl
+    100042: grizzly_l_EyelidUpper-nub_bone
+    100044: grizzly_l_EyelidUpper_bone
+    100046: grizzly_l_EyelidUpper_ctrl
+    100048: grizzly_l_Femur_bone
+    100050: grizzly_l_Foot_ctrl
+    100052: grizzly_l_Humerus_bone
+    100054: grizzly_l_Metacarpals_bone
+    100056: grizzly_l_Metatarsus_bone
+    100058: grizzly_l_Paw_ctrl
+    100060: grizzly_l_Phalanges-nub_bone
+    100062: grizzly_l_Phalanges_bone
+    100064: grizzly_l_Scapula_bone
+    100066: grizzly_l_Scapula_ctrl
+    100068: grizzly_l_Tibia_bone
+    100070: grizzly_l_Ulna_bone
+    100072: grizzly_Main_ctrl
+    100074: grizzly_Mandible-nub_bone
+    100076: grizzly_Mandible_bone
+    100078: grizzly_Mandible_ctrl
+    100080: grizzly_Maxilla-nub_bone
+    100082: grizzly_Maxilla_bone
+    100084: grizzly_Maxilla_ctrl
+    100086: grizzly_Neck_bone
+    100088: grizzly_NeckBase_bone
+    100090: grizzly_NeckBase_ctrl
+    100092: grizzly_Pelvis_bone
+    100094: grizzly_Pelvis_ctrl
+    100096: grizzly_r_Claw-nub_bone
+    100098: grizzly_r_Claw_bone
+    100100: grizzly_r_Ear-nub_bone
+    100102: grizzly_r_Ear_bone
+    100104: grizzly_r_EarBase_bone
+    100106: grizzly_r_EarBase_ctrl
+    100108: grizzly_r_EyelidLower-nub_bone
+    100110: grizzly_r_EyelidLower_bone
+    100112: grizzly_r_EyelidLower_ctrl
+    100114: grizzly_r_EyelidUpper-nub_bone
+    100116: grizzly_r_EyelidUpper_bone
+    100118: grizzly_r_EyelidUpper_ctrl
+    100120: grizzly_r_Femur_bone
+    100122: grizzly_r_Foot_ctrl
+    100124: grizzly_r_Humerus_bone
+    100126: grizzly_r_Metacarpals_bone
+    100128: grizzly_r_Metatarsus_bone
+    100130: grizzly_r_Paw_ctrl
+    100132: grizzly_r_Phalanges-nub_bone
+    100134: grizzly_r_Phalanges_bone
+    100136: grizzly_r_Scapula_bone
+    100138: grizzly_r_Scapula_ctrl
+    100140: grizzly_r_Tibia_bone
+    100142: grizzly_r_Ulna_bone
+    100144: grizzly_Spine1_bone
+    100146: grizzly_Spine1_ctrl
+    100148: grizzly_Spine2_bone
+    100150: grizzly_Spine3_bone
+    100152: grizzly_Spine3_ctrl
+    100154: grizzly_Tail-nub_bone
+    100156: grizzly_Tail_bone
+    100158: grizzly_Body_mesh
+    100160: grizzly_l_ball_IKGoal
+    100162: grizzly_l_Heel_hlp
+    100164: grizzly_l_heel_IKGoal
+    100166: grizzly_l_HeelPeel_hlp
+    100168: grizzly_l_paw_IKGoal
+    100170: grizzly_l_PawLift_hlp
+    100172: grizzly_l_PawTap_hlp
+    100174: grizzly_l_pivot_IKGoal
+    100176: grizzly_l_toe_IKGoal
+    100178: grizzly_l_ToeLift_hlp
+    100180: grizzly_l_ToeTap_hlp
+    100182: grizzly_l_Wrist_hlp
+    100184: grizzly_l_wrist_IKGoal
+    100186: grizzly_l_WristPeel_hlp
+    100188: grizzly_r_ball_IKGoal
+    100190: grizzly_r_Heel_hlp
+    100192: grizzly_r_heel_IKGoal
+    100194: grizzly_r_HeelPeel_hlp
+    100196: grizzly_r_paw_IKGoal
+    100198: grizzly_r_PawLift_hlp
+    100200: grizzly_r_PawTap_hlp
+    100202: grizzly_r_pivot_IKGoal
+    100204: grizzly_r_toe_IKGoal
+    100206: grizzly_r_ToeLift_hlp
+    100208: grizzly_r_ToeTap_hlp
+    100210: grizzly_r_Wrist_hlp
+    100212: grizzly_r_wrist_IKGoal
+    100214: grizzly_r_WristPeel_hlp
+    100216: grizzly_Teeth_mesh
+    400000: bear_Body_mesh
+    400002: bear_Fur_mesh
+    400004: bear_Teeth_mesh
+    400006: Circle001
+    400008: //RootNode
+    400010: grizzly_COM_ctrl
+    400012: grizzly_Head_bone
+    400014: grizzly_Head_ctrl
+    400016: grizzly_Jaw_bone
+    400018: grizzly_Jaw_ctrl
+    400020: grizzly_l_Claw-nub_bone
+    400022: grizzly_l_Claw_bone
+    400024: grizzly_l_Ear-nub_bone
+    400026: grizzly_l_Ear_bone
+    400028: grizzly_l_EarBase_bone
+    400030: grizzly_l_EarBase_ctrl
+    400032: grizzly_l_EarBase_ctrl001
+    400034: grizzly_l_EarBase_ctrl002
+    400036: grizzly_l_EyelidLower-nub_bone
+    400038: grizzly_l_EyelidLower_bone
+    400040: grizzly_l_EyelidLower_ctrl
+    400042: grizzly_l_EyelidUpper-nub_bone
+    400044: grizzly_l_EyelidUpper_bone
+    400046: grizzly_l_EyelidUpper_ctrl
+    400048: grizzly_l_Femur_bone
+    400050: grizzly_l_Foot_ctrl
+    400052: grizzly_l_Humerus_bone
+    400054: grizzly_l_Metacarpals_bone
+    400056: grizzly_l_Metatarsus_bone
+    400058: grizzly_l_Paw_ctrl
+    400060: grizzly_l_Phalanges-nub_bone
+    400062: grizzly_l_Phalanges_bone
+    400064: grizzly_l_Scapula_bone
+    400066: grizzly_l_Scapula_ctrl
+    400068: grizzly_l_Tibia_bone
+    400070: grizzly_l_Ulna_bone
+    400072: grizzly_Main_ctrl
+    400074: grizzly_Mandible-nub_bone
+    400076: grizzly_Mandible_bone
+    400078: grizzly_Mandible_ctrl
+    400080: grizzly_Maxilla-nub_bone
+    400082: grizzly_Maxilla_bone
+    400084: grizzly_Maxilla_ctrl
+    400086: grizzly_Neck_bone
+    400088: grizzly_NeckBase_bone
+    400090: grizzly_NeckBase_ctrl
+    400092: grizzly_Pelvis_bone
+    400094: grizzly_Pelvis_ctrl
+    400096: grizzly_r_Claw-nub_bone
+    400098: grizzly_r_Claw_bone
+    400100: grizzly_r_Ear-nub_bone
+    400102: grizzly_r_Ear_bone
+    400104: grizzly_r_EarBase_bone
+    400106: grizzly_r_EarBase_ctrl
+    400108: grizzly_r_EyelidLower-nub_bone
+    400110: grizzly_r_EyelidLower_bone
+    400112: grizzly_r_EyelidLower_ctrl
+    400114: grizzly_r_EyelidUpper-nub_bone
+    400116: grizzly_r_EyelidUpper_bone
+    400118: grizzly_r_EyelidUpper_ctrl
+    400120: grizzly_r_Femur_bone
+    400122: grizzly_r_Foot_ctrl
+    400124: grizzly_r_Humerus_bone
+    400126: grizzly_r_Metacarpals_bone
+    400128: grizzly_r_Metatarsus_bone
+    400130: grizzly_r_Paw_ctrl
+    400132: grizzly_r_Phalanges-nub_bone
+    400134: grizzly_r_Phalanges_bone
+    400136: grizzly_r_Scapula_bone
+    400138: grizzly_r_Scapula_ctrl
+    400140: grizzly_r_Tibia_bone
+    400142: grizzly_r_Ulna_bone
+    400144: grizzly_Spine1_bone
+    400146: grizzly_Spine1_ctrl
+    400148: grizzly_Spine2_bone
+    400150: grizzly_Spine3_bone
+    400152: grizzly_Spine3_ctrl
+    400154: grizzly_Tail-nub_bone
+    400156: grizzly_Tail_bone
+    400158: grizzly_Body_mesh
+    400160: grizzly_l_ball_IKGoal
+    400162: grizzly_l_Heel_hlp
+    400164: grizzly_l_heel_IKGoal
+    400166: grizzly_l_HeelPeel_hlp
+    400168: grizzly_l_paw_IKGoal
+    400170: grizzly_l_PawLift_hlp
+    400172: grizzly_l_PawTap_hlp
+    400174: grizzly_l_pivot_IKGoal
+    400176: grizzly_l_toe_IKGoal
+    400178: grizzly_l_ToeLift_hlp
+    400180: grizzly_l_ToeTap_hlp
+    400182: grizzly_l_Wrist_hlp
+    400184: grizzly_l_wrist_IKGoal
+    400186: grizzly_l_WristPeel_hlp
+    400188: grizzly_r_ball_IKGoal
+    400190: grizzly_r_Heel_hlp
+    400192: grizzly_r_heel_IKGoal
+    400194: grizzly_r_HeelPeel_hlp
+    400196: grizzly_r_paw_IKGoal
+    400198: grizzly_r_PawLift_hlp
+    400200: grizzly_r_PawTap_hlp
+    400202: grizzly_r_pivot_IKGoal
+    400204: grizzly_r_toe_IKGoal
+    400206: grizzly_r_ToeLift_hlp
+    400208: grizzly_r_ToeTap_hlp
+    400210: grizzly_r_Wrist_hlp
+    400212: grizzly_r_wrist_IKGoal
+    400214: grizzly_r_WristPeel_hlp
+    400216: grizzly_Teeth_mesh
+    2300000: grizzly_l_Foot_ctrl
+    2300002: grizzly_l_Paw_ctrl
+    2300004: grizzly_r_Foot_ctrl
+    2300006: grizzly_r_Paw_ctrl
+    3300000: grizzly_l_Foot_ctrl
+    3300002: grizzly_l_Paw_ctrl
+    3300004: grizzly_r_Foot_ctrl
+    3300006: grizzly_r_Paw_ctrl
+    4300000: bear_Body_mesh
+    4300002: bear_Fur_mesh
+    4300004: bear_Teeth_mesh
+    4300006: grizzly_r_Foot_ctrl
+    4300008: grizzly_l_Foot_ctrl
+    4300010: grizzly_l_Paw_ctrl
+    4300012: grizzly_r_Paw_ctrl
+    4300014: grizzly_Body_mesh
+    4300016: grizzly_Teeth_mesh
+    7400000: walk
+    9500000: //RootNode
+    13700000: bear_Body_mesh
+    13700002: bear_Fur_mesh
+    13700004: bear_Teeth_mesh
+    13700006: grizzly_Body_mesh
+    13700008: grizzly_Teeth_mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bear_Body_mesh
+        weight: 1
+      - path: bear_Fur_mesh
+        weight: 1
+      - path: bear_Teeth_mesh
+        weight: 1
+      - path: grizzly_Head_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_l_Femur_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_l_Femur_bone/grizzly_l_Tibia_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_l_Femur_bone/grizzly_l_Tibia_bone/grizzly_l_Metatarsus_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_l_Femur_bone/grizzly_l_Tibia_bone/grizzly_l_Metatarsus_bone/grizzly_l_Phalanges_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_l_Femur_bone/grizzly_l_Tibia_bone/grizzly_l_Metatarsus_bone/grizzly_l_Phalanges_bone/grizzly_l_Phalanges-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_r_Femur_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_r_Femur_bone/grizzly_r_Tibia_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_r_Femur_bone/grizzly_r_Tibia_bone/grizzly_r_Metatarsus_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_r_Femur_bone/grizzly_r_Tibia_bone/grizzly_r_Metatarsus_bone/grizzly_r_Phalanges_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_r_Femur_bone/grizzly_r_Tibia_bone/grizzly_r_Metatarsus_bone/grizzly_r_Phalanges_bone/grizzly_r_Phalanges-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_l_Scapula_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_l_Scapula_bone/grizzly_l_Humerus_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_l_Scapula_bone/grizzly_l_Humerus_bone/grizzly_l_Ulna_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_l_Scapula_bone/grizzly_l_Humerus_bone/grizzly_l_Ulna_bone/grizzly_l_Metacarpals_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_l_Scapula_bone/grizzly_l_Humerus_bone/grizzly_l_Ulna_bone/grizzly_l_Metacarpals_bone/grizzly_l_Claw_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_l_Scapula_bone/grizzly_l_Humerus_bone/grizzly_l_Ulna_bone/grizzly_l_Metacarpals_bone/grizzly_l_Claw_bone/grizzly_l_Claw-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_l_Scapula_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_Jaw_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_Jaw_bone/grizzly_Mandible_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_Jaw_bone/grizzly_Mandible_bone/grizzly_Mandible-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_Jaw_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_Jaw_ctrl/grizzly_Mandible_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EarBase_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EarBase_bone/grizzly_l_Ear_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EarBase_bone/grizzly_l_Ear_bone/grizzly_l_Ear-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EarBase_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EarBase_ctrl/grizzly_l_EarBase_ctrl001
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EyelidLower_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EyelidLower_bone/grizzly_l_EyelidLower-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EyelidLower_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EyelidUpper_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EyelidUpper_bone/grizzly_l_EyelidUpper-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_l_EyelidUpper_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_Maxilla_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_Maxilla_bone/grizzly_Maxilla-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_Maxilla_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EarBase_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EarBase_bone/grizzly_r_Ear_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EarBase_bone/grizzly_r_Ear_bone/grizzly_r_Ear-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EarBase_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EarBase_ctrl/grizzly_l_EarBase_ctrl002
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EyelidLower_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EyelidLower_bone/grizzly_r_EyelidLower-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EyelidLower_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EyelidUpper_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EyelidUpper_bone/grizzly_r_EyelidUpper-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_NeckBase_bone/grizzly_Neck_bone/grizzly_Head_bone/grizzly_r_EyelidUpper_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_r_Scapula_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_r_Scapula_bone/grizzly_r_Humerus_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_r_Scapula_bone/grizzly_r_Humerus_bone/grizzly_r_Ulna_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_r_Scapula_bone/grizzly_r_Humerus_bone/grizzly_r_Ulna_bone/grizzly_r_Metacarpals_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_r_Scapula_bone/grizzly_r_Humerus_bone/grizzly_r_Ulna_bone/grizzly_r_Metacarpals_bone/grizzly_r_Claw_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_r_Scapula_bone/grizzly_r_Humerus_bone/grizzly_r_Ulna_bone/grizzly_r_Metacarpals_bone/grizzly_r_Claw_bone/grizzly_r_Claw-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Spine1_bone/grizzly_Spine2_bone/grizzly_Spine3_bone/grizzly_r_Scapula_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Tail_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_COM_ctrl/grizzly_Pelvis_bone/grizzly_Tail_bone/grizzly_Tail-nub_bone
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_l_Foot_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_l_Paw_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_r_Foot_ctrl
+        weight: 1
+      - path: grizzly_Main_ctrl/grizzly_r_Paw_ctrl
+        weight: 1
+      - path: grizzly_NeckBase_ctrl
+        weight: 1
+      - path: grizzly_Pelvis_ctrl
+        weight: 1
+      - path: grizzly_Pelvis_ctrl/Circle001
+        weight: 1
+      - path: grizzly_Spine1_ctrl
+        weight: 1
+      - path: grizzly_Spine3_ctrl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: grizzly_Main_ctrl
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

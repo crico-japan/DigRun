@@ -340,6 +340,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 267389153526715250}
+  - {fileID: 4790196521400100907}
   m_Father: {fileID: 8942135866738512494}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -357,6 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list:
   - {fileID: 8084312081292651054}
+  - {fileID: 218808639993359721}
 --- !u!1 &1585948610760311946
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +624,7 @@ MonoBehaviour:
   angelLimit: 60
   agent: {fileID: 7978837574681278409}
   normal: {x: 0, y: 0, z: 0}
+  radius: 0.2
 --- !u!1 &3218307767367754174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,13 +1246,13 @@ GameObject:
   - component: {fileID: 1201386019494468393}
   - component: {fileID: 5586547899869969306}
   - component: {fileID: 1817133629777865311}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RockClimbBehaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1201386019494468393
 Transform:
   m_ObjectHideFlags: 0
@@ -1389,6 +1392,49 @@ Transform:
   m_Father: {fileID: 2929599850941432624}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4823897301588846917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4790196521400100907}
+  - component: {fileID: 218808639993359721}
+  m_Layer: 7
+  m_Name: DisableCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4790196521400100907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823897301588846917}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7795456069631735864}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &218808639993359721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4823897301588846917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ba4bab29af574408a11b599a154663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4966791913541574779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1745,7 @@ GameObject:
   - component: {fileID: 2227357176906966636}
   - component: {fileID: 2227357176906966638}
   - component: {fileID: 6186482489140948504}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: basic_rig Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
