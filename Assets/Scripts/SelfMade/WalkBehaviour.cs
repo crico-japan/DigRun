@@ -71,6 +71,7 @@ public class WalkBehaviour : AgentBehaviour
         base.StopRunning();
         //agent.Rigidbody.velocity = Vector3.zero;
         isRunnning = false;
+        //agent.GetComponent<Trigger>().ConsumeTrigger();
     }
 
     [SerializeField]

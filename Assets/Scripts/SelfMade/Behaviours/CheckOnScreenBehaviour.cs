@@ -53,14 +53,14 @@ public class CheckOnScreenBehaviour : AgentBehaviour
     {
         var viewportPos = camera.WorldToViewportPoint(transform.position);
         var playerViewPortPos = camera.WorldToViewportPoint(player.position);
-        if(viewportPos.x < 1-0.25f)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        //if(viewportPos.x < 1-0.25f)
+        //{
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
         if(Mathf.Abs(playerViewPortPos.x - viewportPos.x) < 0.5f)
         {
             return true;

@@ -1,4 +1,5 @@
 using Crico.AI;
+using Crico.AI.States;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
@@ -19,6 +20,9 @@ namespace Crico
 
         [SerializeField]
         FragmentGenerator fragmentGenerator = null;
+
+        [SerializeField]
+        StateTransitionOnTapInput transitionOnTapInput = null;
 
         [SerializeField]
         Obi.ObiParticleRenderer[] particleRenderers;
@@ -44,6 +48,7 @@ namespace Crico
             Assert.IsNotNull(runtimeCircleClipper);
             Assert.IsNotNull(fragmentGenerator);
             Assert.IsNotNull(cameraFollowTarget);
+            Assert.IsNotNull(transitionOnTapInput);
         }
 
         private void Awake()
@@ -63,6 +68,8 @@ namespace Crico
             {
                 camera.GetComponent<Obi.ObiFluidRenderer>().particleRenderers = particleRenderers;
             }
+
+            touchSensor.onPointerUp.AddListener(transitionOnTapInput.OnTap);
         }
 
         private bool CheckStageWon()

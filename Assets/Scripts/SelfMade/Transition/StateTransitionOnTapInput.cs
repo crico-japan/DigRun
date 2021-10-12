@@ -16,8 +16,9 @@ namespace Crico.AI.States
             agentInputReceiver.onPointerUp.AddListener(OnTap);
         }
 
-        private void OnTap()
+        public void OnTap()
         {
+            //agentInputReceiver.onPointerUp.RemoveListener(OnTap);
             agentInputReceiver = null;
             inputReceived = true;
         }
