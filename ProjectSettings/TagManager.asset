@@ -11,6 +11,8 @@ TagManager:
   - MiniMapCamera
   - Rock
   - Cadaver
+  - Animal
+  - CameraFollowBehaviour
   layers:
   - Default
   - TransparentFX

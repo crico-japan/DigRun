@@ -18,10 +18,12 @@ public class CheckOnScreenBehaviour : AgentBehaviour
     private Agent agent;
     private Camera camera;
     private Rect rect = new Rect(0, 0, 1, 1);
+    private Transform player;
     private void Awake()
     {
         camera = Camera.main;
         rect = new Rect(widthMargin, heightMargin, 1 - widthMargin*2, 1 - heightMargin*2);
+        player = GameObject.Find("Player").transform;
     }
 
     public override void StartRunning(Agent agent)
@@ -50,16 +52,33 @@ public class CheckOnScreenBehaviour : AgentBehaviour
     bool CheckInScreen(Transform transform)
     {
         var viewportPos = camera.WorldToViewportPoint(transform.position);
-        if(rect.Contains(viewportPos))
+        var playerViewPortPos = camera.WorldToViewportPoint(player.position);
+        if(viewportPos.x < 1-0.25f)
         {
-            ShowText("‰æ–Ê“à");
             return true;
         }
         else
         {
-            ShowText("‰æ–ÊŠO");
             return false;
         }
+        if(Mathf.Abs(playerViewPortPos.x - viewportPos.x) < 0.5f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        //if(rect.Contains(viewportPos))
+        //{
+        //    ShowText("‰æ–Ê“à");
+        //    return true;
+        //}
+        //else
+        //{
+        //    ShowText("‰æ–ÊŠO");
+        //    return false;
+        //}
     }
 
     [SerializeField]

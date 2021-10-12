@@ -26,7 +26,7 @@ public class HorizontalFOVFilter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //baseFOV = camera.fieldOfView;
     }
 
     // Update is called once per frame

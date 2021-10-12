@@ -63,6 +63,7 @@ public class WalkBehaviour : AgentBehaviour
         this.agent = agent;
         //agent.Rigidbody.AddForce(agent.transform.right * moveSpeed, ForceMode.VelocityChange);
         isRunnning = true;
+        Debug.Log("Enter WalkState");
     }
 
     public override void StopRunning()

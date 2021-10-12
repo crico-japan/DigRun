@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731196709802432476}
   - component: {fileID: 5315328564410445174}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733906103070270765}
   - component: {fileID: 7376082030026062635}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2171554273728884455}
   - component: {fileID: 9068767738103894022}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3455307146629254238}
   - component: {fileID: 6595627656131177405}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6492344705832145029}
   - component: {fileID: 8541554946303364740}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 6492344705837919494}
   - component: {fileID: 6492344705837919493}
   - component: {fileID: 1340458332645431381}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Fracture3
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -777,7 +777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6492344706121411039}
   - component: {fileID: 6152552208525916181}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   - component: {fileID: 6492344706382832217}
   - component: {fileID: 6492344706382832220}
   - component: {fileID: 3313674962235843383}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Fracture2
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -1094,7 +1094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6492344706512741075}
   - component: {fileID: 6074211158924896354}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 6492344706615705052}
   - component: {fileID: 6492344706615705043}
   - component: {fileID: 2914039717692920909}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Fracture4
   m_TagString: Rock
   m_Icon: {fileID: 0}
@@ -1253,7 +1253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6492344706768208158}
   - component: {fileID: 3434257053336804760}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 7333238740880254395}
   - component: {fileID: 7333238740882455417}
   - component: {fileID: 3336524168064521213}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Fracture1
   m_TagString: Rock
   m_Icon: {fileID: 0}

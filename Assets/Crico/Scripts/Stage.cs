@@ -36,11 +36,14 @@ namespace Crico
 
         bool playerCharaceterArrived = false;
 
+        [SerializeField]
+        private GameObject cameraFollowTarget;
         private void AssertInspectorVars()
         {
             Assert.IsNotNull(player);
             Assert.IsNotNull(runtimeCircleClipper);
             Assert.IsNotNull(fragmentGenerator);
+            Assert.IsNotNull(cameraFollowTarget);
         }
 
         private void Awake()
@@ -137,6 +140,16 @@ namespace Crico
         public void SetPlayerCharaceterArrived()
         {
             playerCharaceterArrived = true;
+        }
+
+        public void EnableScroll()
+        {
+            cameraFollowTarget.SetActive(true);
+        }
+
+        public void DisableScroll()
+        {
+            cameraFollowTarget.SetActive(false);
         }
     }
 
