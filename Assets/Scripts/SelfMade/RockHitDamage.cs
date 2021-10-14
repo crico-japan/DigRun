@@ -32,18 +32,23 @@ public class RockHitDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(disabled)
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (disabled)
         {
             return;
         }
 
-        DamageLocation location = other.GetComponent<DamageLocation>();
-        if(location == null)
+        DamageLocation location = collision.gameObject.GetComponent<DamageLocation>();
+        if (location == null)
         {
             return;
         }
 
-        if(other.transform.position.y > transform.position.y)
+        if (collision.gameObject.transform.position.y > transform.position.y)
         {
             return;
         }
@@ -56,14 +61,9 @@ public class RockHitDamage : MonoBehaviour
         p.type = damageType;
 
         bool damageTaken = location.TakeDamage(p);
-        if(damageTaken)
+        if (damageTaken)
         {
             onSuccessfulHit.Invoke();
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        OnTriggerEnter(collision.collider);
     }
 }

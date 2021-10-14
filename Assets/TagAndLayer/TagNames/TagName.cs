@@ -19,4 +19,5 @@ public static class TagName
 	public const string Cadaver = "Cadaver";
 	public const string Animal = "Animal";
 	public const string CameraFollowBehaviour = "CameraFollowBehaviour";
+	public const string CameraStateMachine = "CameraStateMachine";
 }

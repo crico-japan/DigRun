@@ -15,6 +15,9 @@ public class CheckOnScreenBehaviour : AgentBehaviour
     [Range(0, 0.5f)]
     float heightMargin = 0.1f;
 
+    [SerializeField]
+    float activateDist = 0.1f;
+
     private Agent agent;
     private Camera camera;
     private Rect rect = new Rect(0, 0, 1, 1);
@@ -46,7 +49,6 @@ public class CheckOnScreenBehaviour : AgentBehaviour
     public override void StopRunning()
     {
         base.StopRunning();
-        agent.Rigidbody.useGravity = true;
     }
 
     bool CheckInScreen(Transform transform)
@@ -61,7 +63,7 @@ public class CheckOnScreenBehaviour : AgentBehaviour
         //{
         //    return false;
         //}
-        if(Mathf.Abs(playerViewPortPos.x - viewportPos.x) < 0.5f)
+        if(Mathf.Abs(playerViewPortPos.x - viewportPos.x) < activateDist)
         {
             return true;
         }
