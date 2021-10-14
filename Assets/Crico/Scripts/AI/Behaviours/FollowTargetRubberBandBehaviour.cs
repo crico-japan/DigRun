@@ -12,6 +12,17 @@ namespace Crico.AI.Behaviours
         Vector3 followDistVec;
         Quaternion baseRotation;
 
+        Status status = Status.INVALID;
+        private void Awake()
+        {
+            
+        }
+
+        public override Status GetStatus()
+        {
+            return status;
+        }
+
         public override void StartRunning(Agent agent)
         {
             base.StartRunning(agent);
@@ -20,6 +31,13 @@ namespace Crico.AI.Behaviours
 
             followDistVec = agent.transform.position - target.position;
             baseRotation = agent.transform.rotation;
+            status = Status.RUNNING;
+        }
+
+        public override void StopRunning()
+        {
+            base.StopRunning();
+            status = Status.INVALID;
         }
 
         public void SetRotation(float amount)
@@ -59,8 +77,10 @@ namespace Crico.AI.Behaviours
                 Vector3 newPos = agent.transform.position + movementVec;
                 agent.transform.position = newPos;
             }
-
+            else
+            {
+                status = Status.SUCCESS;
+            }
         }
     }
-
 }

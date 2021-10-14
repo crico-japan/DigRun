@@ -1,4 +1,5 @@
 using Crico.AI;
+using Crico.AI.Behaviours;
 using Crico.AI.States;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -41,7 +42,10 @@ namespace Crico
         bool playerCharaceterArrived = false;
 
         [SerializeField]
-        private GameObject cameraFollowTarget;
+        private AgentBehaviour cameraFollowTarget;
+
+        //[SerializeField]
+        //private StateTransitionOnBehaviourComplete cameraScrollWaitTransition;
         private void AssertInspectorVars()
         {
             Assert.IsNotNull(player);
@@ -70,6 +74,8 @@ namespace Crico
             }
 
             touchSensor.onPointerUp.AddListener(transitionOnTapInput.OnTap);
+
+            //cameraScrollWaitTransition.SetTargetBehaviour(cameraFollowTarget);
         }
 
         private bool CheckStageWon()
@@ -121,7 +127,7 @@ namespace Crico
         {
             playing = true;
             startEvent.Invoke();
-            mainCameraStartStopTrigger.SetTrigger();
+            //mainCameraStartStopTrigger.SetTrigger();
 
             //
             mainCameraTargetHolder.SetTarget(player.gameObject);
@@ -151,12 +157,12 @@ namespace Crico
 
         public void EnableScroll()
         {
-            cameraFollowTarget.SetActive(true);
+            cameraFollowTarget.gameObject.SetActive(true);
         }
 
         public void DisableScroll()
         {
-            cameraFollowTarget.SetActive(false);
+            cameraFollowTarget.gameObject.SetActive(false);
         }
     }
 

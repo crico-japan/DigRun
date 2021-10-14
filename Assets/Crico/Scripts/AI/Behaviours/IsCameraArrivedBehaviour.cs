@@ -11,10 +11,14 @@ public class IsCameraArrivedBehaviour : AgentBehaviour
     private Camera camera;
     private Status status = Status.INVALID;
     private Vector2 initViewportPos;
+
+    Vector3 followDistVec;
     private void Awake()
     {
         camera = Camera.main;
         initViewportPos = camera.WorldToViewportPoint(agent.transform.position);
+
+        followDistVec = camera.transform.position - agent.transform.position;
     }
 
     public override Status GetStatus()
@@ -34,9 +38,12 @@ public class IsCameraArrivedBehaviour : AgentBehaviour
 
         var currentViewportPos = camera.WorldToViewportPoint(agent.transform.position);
 
-        if (currentViewportPos.x <= 0.25f)
+        if (currentViewportPos.x <= 0.2f)
         {
             status = Status.SUCCESS;
         }
+
+        Transform target = agent.transform;
+
     }
 }

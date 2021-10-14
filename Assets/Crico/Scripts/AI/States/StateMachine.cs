@@ -15,7 +15,7 @@ namespace Crico.AI.States
         [SerializeField] State firstState = null;
 
 
-        /*[SerializeField]*/ State currentState = null;
+        [SerializeField] State currentState = null;
 
         private void Reset()
         {

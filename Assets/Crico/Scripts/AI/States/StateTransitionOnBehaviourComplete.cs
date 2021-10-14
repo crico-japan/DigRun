@@ -12,6 +12,11 @@ namespace Crico.AI.States
             return behaviour.GetStatus() == AgentBehaviour.Status.SUCCESS
                 || behaviour.GetStatus() == AgentBehaviour.Status.FAILURE;
         }
+
+        public void SetTargetBehaviour(AgentBehaviour targetBehaviour)
+        {
+            behaviour = targetBehaviour;
+        }
     }
 
 }
